@@ -1,0 +1,23 @@
+{
+  "name": "usds-brand-templates",
+  "version": "1.0.0",
+  "scripts": {
+    "css:header": "node-sass --include-path scss assets/scss/header.scss assets/css/header.css",
+    "css:header2": "node-sass --include-path scss assets/scss/header.scss assets/css/secondary-header.css",
+    "css:footer": "node-sass --include-path scss assets/scss/footer.scss assets/css/footer.css",
+    "css:modal": "node-sass --include-path scss assets/scss/usds-modal.scss assets/css/usds-modal.css",
+    "css:banner": "node-sass --include-path scss assets/scss/universal-messaging-banner.scss assets/css/universal-messaging-banner.css",
+    "css:all": "npm run css:header && npm run css:modal && npm run css:footer && npm run css:banner",
+    "watch-sass:footer": "node-sass assets/scss/colors.scss assets/scss/fonts.scss assets/footer.scss --watch",
+    "watch-sass:header": "node-sass assets/scss/colors.scss assets/scss/fonts.scss assets/css/header.scss --watch",
+    "watch-sass:banner": "node-sass assets/scss/colors.scss assets/scss/fonts.scss assets/css/universal-messaging-banner.scss --watch",
+    "uglify:header": "uglifyjs assets/js/header.js --compress --mangle --output assets/js/header.min.js",
+    "uglify:modal": "uglifyjs assets/js/usds-modal.js --compress --mangle --output assets/js/usds-modal.min.js",
+    "uglify:banner": "uglifyjs assets/js/universal-messaging-banner.js --compress --mangle --output assets/js/universal-messaging-banner.min.js",
+    "uglify:all": "npm run uglify:header && npm run uglify:modal && npm run uglify:banner"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "uglify-js": "^3.15.5"
+  }
+}

@@ -1,0 +1,461 @@
+@import '../scss/colors.scss';
+@import '../scss/fonts.scss';
+
+$color-text-dark: $fsa-color-white;
+$color-exclamation-icon-dark: $fsa-color-gray-3;
+$color-text-light: $fsa-color-black;
+$color-exclamation-icon-light: $fsa-color-yellow;
+$background-color-banner-dark: $fsa-color-blue-6;
+$background-color-banner-button-dark: $fsa-color-blue-5;
+$background-color-banner-light: $fsa-color-light-yellow;
+$background-color-banner-button-light: $fsa-color-yellow;
+$hover-opacity: 0.7;
+
+.fsa-link-color-light:hover {
+	opacity: $hover-opacity;
+}
+.fsa-link-color-dark:hover {
+  opacity: $hover-opacity;
+}
+.fsa-show-hide-button-dark:hover {
+	opacity: $hover-opacity;
+}
+.fsa-show-hide-button-light:hover {
+	opacity: $hover-opacity;
+}
+.fsa-messaging-banner-dark {
+	height: fit-content;
+	width: 100%;
+	background-color: $background-color-banner-dark;
+	margin: auto;
+	min-height: 52px;
+}
+.fsa-show-hide-button-dark {
+	height: 52px;
+	width: 95px;
+	background-color: $background-color-banner-button-dark;
+	float: right;
+	border: none;
+}
+.fsa-minus-square-icon-dark {
+	height: 21px;
+	width: 18px;
+	opacity: 0.6;
+	color: $color-text-dark;
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 21px;
+}
+.fsa-plus-square-icon-dark {
+	height: 21px;
+	width: 18px;
+	opacity: 0.6;
+	color: $color-text-dark;
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 21px;
+}
+.fsa-show-hide-text-dark {
+	height: 19px;
+	width: 36px;
+	color: $color-text-dark;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: 19px;
+	margin-left: 5px;
+	font-family: $fsa-usds-font-default;
+}
+.fsa-arrow-icon {
+	margin-left: 5px;
+	margin-left: 5px;
+}
+.fsa-link-color-dark {
+	color: $color-text-dark;
+	font-weight: bold;
+}
+.fsa-messaging-banner-light {
+	height: fit-content;
+	width: 100%;
+	background-color: $background-color-banner-light;
+	margin: auto;
+	min-height: 52px;
+}
+.fsa-show-hide-button-light {
+	height: 52px;
+	width: 95px;
+	background-color: $background-color-banner-button-light;
+	float: right;
+	border: none;
+}
+.fsa-minus-square-icon-light {
+	height: 21px;
+	width: 18px;
+	opacity: 0.6;
+	color: $color-text-light;
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 21px;
+}
+.fsa-plus-square-icon-light {
+	height: 21px;
+	width: 18px;
+	opacity: 0.6;
+	color: $color-text-light;
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 21px;
+}
+.fsa-show-hide-text-light {
+	height: 19px;
+	width: 36px;
+	color: $color-text-light;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: 19px;
+	margin-left: 5px;
+	font-family: $fsa-usds-font-default;
+}
+.fsa-link-color-light {
+	color: $color-text-light;
+	font-weight: bold;
+}
+/* Desktop */
+@media (min-width: 768px) {
+	.fsa-banner-heading-dark {
+		height: auto;
+		margin: 0 10%;
+		padding: 10px;
+		position: relative;
+		font-family: $fsa-usds-font-default;
+		display: flex;
+		align-items: center;
+	}
+	.fsa-circle-exclamation-icon-dark {
+		color: $color-exclamation-icon-dark;
+		margin-right: 16px;
+		font-size: 2em;
+		line-height: 0.03125em;
+		vertical-align: -0.1875em;
+	}
+	.fsa-heading-dark {
+		height: 26px;
+		width: 525px;
+		color: $color-text-dark;
+		font-size: 22px;
+		font-weight: bold;
+		letter-spacing: 0;
+		line-height: 26px;
+		margin: 0px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.fsa-message-dark {
+		width: 756px;
+		max-width: 70%;
+		color: $color-text-dark;
+		font-family: $fsa-usds-font-default;
+		font-size: 16px;
+		letter-spacing: 0;
+		line-height: 20px;
+		margin-left: 10%;
+		padding-left: 58px;
+		margin-top: 0px;
+		margin-bottom: 20px;
+	}
+	.fsa-banner-link-dark {
+		height: 14px;
+		color: $color-text-dark;
+		font-family: $fsa-usds-font-default;
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 14px;
+		margin-left: 10%;
+		padding-bottom: 20px;
+		padding-left: 58px;
+	}
+	.fsa-banner-heading-light {
+		height: auto;
+		margin: 0 10%;
+		padding: 10px;
+		position: relative;
+		font-family: $fsa-usds-font-default;
+		display: flex;
+		align-items: center;
+	}
+	.fsa-circle-exclamation-icon-light {
+		color: $color-exclamation-icon-light;
+		margin-right: 16px;
+		font-size: 2em;
+		line-height: 0.03125em;
+		vertical-align: -0.1875em;
+	}
+	.fsa-heading-light {
+		height: 26px;
+		width: 525px;
+		color: $color-text-light;
+		font-size: 22px;
+		font-weight: bold;
+		letter-spacing: 0;
+		line-height: 26px;
+		margin: 0px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.fsa-message-light {
+		width: 756px;
+		max-width: 70%;
+		color: $color-text-light;
+		font-family: $fsa-usds-font-default;
+		font-size: 16px;
+		letter-spacing: 0;
+		line-height: 20px;
+		margin-left: 10%;
+		padding-left: 58px;
+		margin-top: 0px;
+		margin-bottom: 20px;
+	}
+	.fsa-banner-link-light {
+		height: 14px;
+		color: $color-text-light;
+		font-family: $fsa-usds-font-default;
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 14px;
+		margin-left: 10%;
+		padding-bottom: 20px;
+		padding-left: 58px;
+	}
+}
+/* Mobile */
+@media (min-width: 350px) and (max-width: 767px) {
+	.fsa-show-hide-button-dark {
+		width: 85px;
+	}
+	.fsa-banner-heading-dark {
+		height: auto;
+		width: 70%;
+		padding-top: 15px;
+		padding-bottom: 11px;
+		padding-left: 20px;
+		position: relative;
+		font-family: $fsa-usds-font-default;
+		display: flex;
+		align-items: center;
+	}
+	.fsa-circle-exclamation-icon-dark {
+		color: $color-exclamation-icon-dark;
+		margin-right: 7px;
+		font-size: 1.25em;
+		line-height: 0.05em;
+		vertical-align: -0.075em;
+	}
+	.fsa-heading-dark {
+		height: 22px;
+		color: $color-text-dark;
+		font-size: 18px;
+		font-weight: bold;
+		letter-spacing: 0;
+		line-height: 22px;
+		margin: 0;
+		text-overflow: ellipsis;
+		padding: 2px;
+	}
+	.fsa-message-dark {
+		color: $color-text-dark;
+		font-family: $fsa-usds-font-default;
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 20px;
+		padding: 13px 20px;
+		margin-top: 10px;
+	}
+	.fsa-banner-link-dark {
+		height: 14px;
+		color: $color-text-dark;
+		font-family: $fsa-usds-font-default;
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 14px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 0px;
+		padding-bottom: 24px;
+	}
+	.fsa-show-hide-button-light {
+		width: 85px;
+	}
+	.fsa-banner-heading-light {
+		height: auto;
+		width: 70%;
+		padding-top: 15px;
+		padding-bottom: 11px;
+		padding-left: 20px;
+		position: relative;
+		font-family: $fsa-usds-font-default;
+		display: flex;
+		align-items: center;
+	}
+	.fsa-circle-exclamation-icon-light {
+		color: $color-exclamation-icon-light;
+		margin-right: 7px;
+		font-size: 1.25em;
+		line-height: 0.05em;
+		vertical-align: -0.075em;
+	}
+	.fsa-heading-light {
+		height: 22px;
+		color: $color-text-light;
+		font-size: 18px;
+		font-weight: bold;
+		letter-spacing: 0;
+		line-height: 22px;
+		margin: 0;
+		text-overflow: ellipsis;
+		padding: 2px;
+	}
+	.fsa-message-light {
+		color: $color-text-light;
+		font-family: $fsa-usds-font-default;
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 20px;
+		padding: 13px 20px;
+		margin-top: 10px;
+	}
+	.fsa-banner-link-light {
+		height: 14px;
+		color: $color-text-light;
+		font-family: $fsa-usds-font-default;
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 14px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 0px;
+		padding-bottom: 24px;
+	}
+}
+/* Small Mobile */
+@media (max-width: 351px) {
+	.fsa-show-hide-button-dark {
+		width: 85px;
+	}
+	.fsa-banner-heading-dark {
+		height: auto;
+		width: 60%;
+		padding-top: 15px;
+		padding-bottom: 11px;
+		padding-left: 20px;
+		position: relative;
+		font-family: $fsa-usds-font-default;
+		display: flex;
+		align-items: center;
+	}
+	.fsa-circle-exclamation-icon-dark {
+		color: $color-exclamation-icon-dark;
+		margin-right: 7px;
+		font-size: 1.25em;
+		line-height: 0.05em;
+		vertical-align: -0.075em;
+	}
+	.fsa-heading-dark {
+		height: 22px;
+		color: #ffffff;
+		font-size: 16px;
+		font-weight: bold;
+		letter-spacing: 0;
+		line-height: 22px;
+		margin: 0;
+		text-overflow: ellipsis;
+		padding: 2px;
+	  }
+	.fsa-message-dark {
+		color: $color-text-dark;
+		font-family: $fsa-usds-font-default;
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 20px;
+		padding: 13px 20px;
+		margin-top: 25px;
+	}
+	.fsa-banner-link-dark {
+		height: 14px;
+		color: $color-text-dark;
+		font-family: $fsa-usds-font-default;
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 14px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 0px;
+		padding-bottom: 24px;
+	}
+	.fsa-messaging-banner-light {
+		height: fit-content;
+		width: 100%;
+		background-color: $background-color-banner-light;
+		margin: auto;
+		min-height: 52px;
+	}
+	.fsa-show-hide-button-light {
+		height: 52px;
+		width: 85px;
+		background-color: $background-color-banner-button-light;
+		float: right;
+		border: none;
+	}
+	.fsa-banner-heading-light {
+		height: auto;
+		width: 60%;
+		padding-top: 15px;
+		padding-bottom: 11px;
+		padding-left: 20px;
+		position: relative;
+		font-family: $fsa-usds-font-default;
+		display: flex;
+		align-items: center;
+	}
+	.fsa-circle-exclamation-icon-light {
+		color: $color-exclamation-icon-light;
+		margin-right: 7px;
+		font-size: 1.25em;
+		line-height: 0.05em;
+		vertical-align: -0.075em;
+	}
+	.fsa-heading-light {
+		height: 22px;
+		color: $color-text-light;
+		font-size: 16px;
+		font-weight: bold;
+		letter-spacing: 0;
+		line-height: 22px;
+		margin: 0;
+		text-overflow: ellipsis;
+		padding: 2px;
+	}
+	.fsa-message-light {
+		color: $color-text-light;
+		font-family: $fsa-usds-font-default;
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 20px;
+		padding: 13px 20px;
+		margin-top: 25px;
+	}
+	.fsa-banner-link-light {
+		height: 14px;
+		color: $color-text-light;
+		font-family: $fsa-usds-font-default;
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 14px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 0px;
+		padding-bottom: 24px;
+	}
+}

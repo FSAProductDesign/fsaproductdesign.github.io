@@ -1,0 +1,349 @@
+@import '../scss/colors.scss';
+@import '../scss/fonts.scss';
+
+$breakpoint-tablet: 768px;
+$breakpoint-phone: 767px;
+
+.fsa-category-example-title {
+    color: $fsa-color-black;
+    font-family: $fsa-usds-font-default;
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1.3125rem;
+}
+
+.fsa-link-text {
+    color: $fsa-color-black;
+    font-family:  $fsa-usds-font-default;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.fsa-servicer-box {
+    grid-area: fsa-servicer-box;
+}
+
+.fsa-category-box {
+    grid-area: fsa-category-box;
+}
+
+.fsa-copyright-box {
+    grid-area: fsa-copyright-box;
+}
+
+.fsa-flexible-text-box {
+    grid-area: fsa-flexible-text-box;
+    display: flex;
+}
+
+.fsa-servicer-logo-text {
+    text-decoration: none;
+}
+
+.fsa-social-media-text {
+    color: $fsa-color-white;
+    text-decoration: none;
+}
+
+.fsa-secondary-social-media-text, 
+.fsa-secondary-social-media-text:visited, 
+.fsa-secondary-social-media-text:active {
+    color: $fsa-color-black;
+    text-decoration: none;
+}
+.fsa-secondary-social-media-text:visited {
+    color: $fsa-color-black;
+    text-decoration: none;
+}
+
+.fsa-copyright-container {
+    background-color:  $fsa-color-blue;
+    color: $fsa-color-white;
+    padding: 1.5rem 1.5rem;
+}
+.fsa-secondary-copyright-container {
+    background-color:  $fsa-color-light-blue;
+    color: $fsa-color-white;
+    padding: 1rem 1rem;
+}
+
+.fsa-copyright-text {
+    grid-gap: 0.625rem;
+    font-family: $fsa-usds-font-default;
+    font-size: 0.75rem;
+}
+
+.fsa-official-servicer-of-title {
+    padding-bottom: 0.5rem;
+    color: $fsa-color-gray;
+}
+
+.row {
+    @media (min-width: $breakpoint-tablet) {
+        padding-bottom: 1rem;
+        padding-right: 1.5rem;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        padding-bottom: 1rem;
+    }
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.fsa-provider-info {
+    @media (min-width: $breakpoint-tablet) {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        padding-top: 0.5rem;
+    }
+}
+
+.fsa-copyright-grid {
+    display: grid;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: auto auto auto auto;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+}
+
+.fsa-social-media-card-container {
+    float: right;
+    display: flex;
+    padding-top: 0.5rem;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.fsa-logo-content {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    font-size: 0.75rem;
+    font-family: $fsa-usds-font-default;
+    font-weight: normal;
+}
+
+.fsa-servicer-logo-size {
+    height: 4.125rem;
+    width: 14rem;
+    position: sticky;
+}
+
+.fsa-flexible-area-box {
+    box-sizing: border-box;
+    height: 6rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0.06rem solid $fsa-color-black;
+    border-radius: 0.375rem;
+    position:sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: $breakpoint-tablet) {
+        width: 28rem;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        width: 20.5rem;
+    }
+}
+
+.fsa-secondary-flexible-area-box {
+    text-align: center;
+    box-sizing: border-box;
+    height: 6rem;
+    background-color: rgba(255,255,255,0.2);
+    border: 0.06rem solid $fsa-color-white;
+    border-radius: 0.375rem;
+    position:sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: $breakpoint-tablet) {
+        width: 28rem;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        width: 20.5rem;
+    }
+}
+.fsa-facebook-media-card{
+    width: 1.5rem;
+}
+
+.fsa-social-media-card {
+    background-color:  $fsa-color-blue;
+    color: $fsa-color-white;
+    margin: 0.3rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 1.2rem;
+}
+
+.fsa-secondary-social-media-card {
+    background-color:  $fsa-color-light-blue;
+    color: $fsa-color-white;
+    margin: 0.3rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 1.2rem;
+}
+
+.fsa-official-servicer-text-box {
+    grid-area: fsa-official-servicer-text-box;
+
+    @media (min-width: $breakpoint-tablet) {
+        order: 1;
+        padding-left: 1rem;
+        height: 25rem;
+        border-left: 0.1rem solid $fsa-color-gray-2;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        padding-top: 1rem;
+        grid-area: fsa-official-servicer-text-box;
+        height: 14rem;
+    }
+}
+
+.fsa-servicer-logo {
+    float: left;
+    position: absolute;
+    box-sizing: border-box;
+    border: 0.00625rem solid $fsa-color-blue;
+    color:  $fsa-color-blue;
+    font-family: $fsa-usds-font-default;
+    font-size: 0.85rem;
+    font-weight: bold;
+    line-height: 0.75rem;
+    background-color: $fsa-color-light-blue-2;
+    border-radius: 0.375rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    @media (min-width: $breakpoint-tablet) {
+        height: 4.125rem;
+        width: 10rem;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        height: 5rem;
+        width: 10.5rem;
+    }
+}
+
+.fsa-secondary-servicer-logo {
+    float: left;
+    position: absolute;
+    box-sizing: border-box;
+    border: 0.00625rem solid $fsa-color-light-blue;
+    color:  $fsa-color-blue;
+    font-family: $fsa-usds-font-default;
+    font-size: 0.85rem;
+    font-weight: bold;
+    line-height: 0.75rem;
+    background-color: $fsa-color-light-blue-4;
+    border-radius: 0.375rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    @media (min-width: $breakpoint-tablet) {
+        height: 4.125rem;
+        width: 10rem;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        height: 5rem;
+        width: 10.5rem;
+    }
+}
+.fsa-footer-container {
+    background-color: $fsa-color-white;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: 0.7rem;
+        display: grid;
+        grid-template-columns: 60% auto;
+        grid-template-areas:
+            "fsa-servicer-box fsa-official-servicer-text-box"
+            "fsa-category-box fsa-official-servicer-text-box"
+            "fsa-copyright-box fsa-flexible-text-box";
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        background-color: $fsa-color-white;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Desktop/Tablet Query */
+@media (min-width: $breakpoint-tablet) {
+
+    .fsa-category-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0.3125rem;
+    }
+
+}
+
+/*Mobile Query*/
+@media (max-width: $breakpoint-phone) {
+
+    #fsa_Category_Example_1 {
+        padding-bottom: 1.8rem;
+    }
+
+    #fsa_Category_Example_2,
+    #fsa_Category_Example_3 {
+        display: none;
+        visibility: hidden;
+    }
+
+    .fsa-border-top {
+        border-top: 0.1rem solid $fsa-color-gray-2;
+    }
+
+    #fsa_Category_List {
+        order: 1;
+    }
+
+    #fsa_Official_Servicer_Content_Box {
+        order: 2;
+    }
+
+    #fsa_Copyright_Content_Box {
+        order: 4;
+    }
+
+    #fsa_Flexible_Content_Box {
+        order: 3;
+    }
+
+}

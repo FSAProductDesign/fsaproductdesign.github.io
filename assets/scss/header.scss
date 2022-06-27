@@ -1,0 +1,1353 @@
+@import url("../fontawesome/css/all.min.css");
+@import '../scss/fonts.scss';
+@import '../scss/colors.scss';
+
+/* Adjust breakpoint based on your content */
+$fsa-header-mobile-view-breakpoint: 1200px;
+
+/* Font Awesome Icon References */
+$fsa-icon-expand-down: "\f078";
+$fsa-icon-collapse-up: "\f077";
+$fsa-icon-expand-right: "\f054";
+$fsa-icon-search: '\f002';
+$fsa-icon-collapsible: '\f068';
+$fsa-icon-expandable: '\f067';
+$fsa-icon-user: '\f2bd';
+$fsa-icon-settings: '\f013';
+$fsa-icon-logout: '\f08b';
+
+/*
+Sass variables to control overall theme of header. Adjust and compile to CSS as needed.
+Provided are the primary and secondary theme settings.
+*/
+
+/* Primary header theme settings. */
+$fsa-header-nav-theme-color: $fsa-color-blue;
+$fsa-header-nav-secondary-theme-color: $fsa-color-blue-2;
+$fsa-header-auth-nav-text-theme-color: $fsa-color-white;
+$fsa-header-auth-nav-text-secondary-theme-color:  $fsa-color-white;
+$fsa-header-nav-text-theme-color: $fsa-color-black;
+$fsa-header-nav-text-secondary-theme-color: $fsa-color-white;
+
+/* Secondary header them settings. */
+//$fsa-header-nav-theme-color: $fsa-color-light-blue;
+//$fsa-header-nav-secondary-theme-color: $fsa-color-blue-2;
+//$fsa-header-auth-nav-text-theme-color: $fsa-color-black;
+//$fsa-header-auth-nav-text-secondary-theme-color:  $fsa-color-white;
+//$fsa-header-nav-text-theme-color: $fsa-color-black;
+//$fsa-header-nav-text-secondary-theme-color: $fsa-color-white;
+
+$fsa-header-links-theme-color: $fsa-color-blue-4 ;
+$fsa-header-search-icon-theme-color: $fsa-color-blue-4 ;
+$fsa-header-co-brand-logo-theme-color:  $fsa-color-gray-2;
+$fsa-header-co-brand-logo-secondary-theme-color:  $fsa-color-light-gray-2;
+$fsa-header-servicer-logo-theme-color: $fsa-color-light-blue-2;
+$fsa-header-mobile-border-theme-color:  $fsa-color-light-gray;
+$fsa-header-mobile-active-indicator-theme-color: $fsa-color-blue-3;
+$fsa-header-mobile-links-theme-color: $fsa-color-light-gray;
+
+@mixin fa-common {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fsa-header {
+  @media screen and (min-width: $fsa-header-mobile-view-breakpoint) {
+
+    .fsa-nav {
+      background-color: $fsa-color-white;
+      opacity: 1;
+      visibility: visible;
+      display: grid;
+
+      grid-template-columns: auto auto 3.125rem 5rem;
+      grid-template-rows: auto;
+      grid-template-areas:
+      "area-nav-1 area-nav-2 area-nav-3 area-nav-gutter"
+      "area-nav-4 area-nav-4 area-nav-4 area-nav-4";
+
+      .fsa-nav-section-1 {
+        grid-area: area-nav-1;
+        justify-self: start;
+        align-self: center;
+        align-items: flex-start;
+        margin-left: 5rem;
+        display: flex;
+      }
+
+      .fsa-nav-section-2 {
+        grid-area: area-nav-2;
+        justify-self: end;
+        display: grid;
+        align-items: center;
+        font-family: $fsa-usds-font-default;
+        font-size: .875rem;
+
+        .fsa-nav-title {
+          color: $fsa-header-nav-text-theme-color;
+        }
+
+        .fsa-nav-categories-container {
+          margin: 0;
+
+          > li {
+            float: left;
+          }
+
+          .fsa-nav-category-container {
+            position: relative;
+
+            &.fsa-show {
+              .fsa-nav-category-dropdown-menu {
+                visibility: visible;
+                opacity: 1;
+                display: block;
+              }
+            }
+
+            .fsa-nav-category-button {
+              background-color: transparent;
+              border: none;
+              font-family: $fsa-usds-font-default;
+              font-size: 0.875rem;
+              font-weight: bold;
+              padding: 1.25rem .75rem;
+              cursor: pointer;
+
+              .fsa-nav-title:after {
+                @include fa-common;
+                font-family: $fa-font-family;
+                content:$fsa-icon-expand-down;
+                font-weight: 900;
+                padding-left: .25rem;
+              }
+
+              &:hover {
+                > .fsa-nav-title {
+                  padding-bottom: .5rem;
+                  border-bottom: .1875rem solid $fsa-header-nav-secondary-theme-color;
+                }
+              }
+
+              &.fsa-show {
+                background-color: $fsa-header-nav-secondary-theme-color;
+                > .fsa-nav-title {
+                  color: $fsa-header-auth-nav-text-secondary-theme-color;
+                }
+
+              }
+            }
+
+            .fsa-nav-category-dropdown-menu {
+              z-index: 2;
+              width: 25rem;
+              background-color: $fsa-header-nav-secondary-theme-color;
+              position: absolute;
+              right: 0;
+              visibility: hidden;
+              opacity: 0;
+              display: none;
+
+              .fsa-nav-category-list-item {
+                display: block;
+                padding: .5rem;
+
+                .fsa-nav-category-link{
+                  color: $fsa-header-auth-nav-text-secondary-theme-color;
+                  text-decoration: none;
+                  font-weight: 600;
+                  font-family: $fsa-usds-font-default;
+                  font-size: .875rem;
+                }
+              }
+
+            }
+          }
+        }
+
+        .fsa-nav-dropdown-list {
+          padding: 0;
+          columns: 2;
+
+          .li {
+            padding: 1rem;
+          }
+        }
+      }
+
+      .fsa-nav-section-3 {
+        grid-area: area-nav-3;
+        justify-self: center;
+        align-self: center;
+
+        .fsa-search-close {
+          visibility: hidden;
+          opacity: 0;
+          display: none;
+        }
+
+        .fsa-search-expand {
+          color: $fsa-header-search-icon-theme-color;
+        }
+
+
+        .fsa-nav-search-button {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          padding: .9375rem 1.25rem;
+
+
+          &.fsa-show {
+            background-color: $fsa-header-nav-theme-color;
+
+            + .fsa-search-dropdown-input-container {
+              background: $fsa-color-white;
+              visibility: visible;
+              opacity: 1;
+              display: flex;
+            }
+
+            .fsa-search-expand {
+              visibility: hidden;
+              opacity: 0;
+              display: none;
+            }
+
+
+            .fsa-search-close {
+              visibility: visible;
+              opacity: 1;
+              display: block;
+              color: $fsa-header-auth-nav-text-theme-color;
+            }
+          }
+        }
+
+
+        .fsa-search-dropdown-container {
+          z-index: 1;
+          position: relative;
+          margin-right: .3125rem;
+
+          .fsa-search-dropdown-input-container {
+            display: none;
+            position: absolute;
+            right: 0;
+            padding: .3125rem;
+            border: .0625rem solid $fsa-header-search-icon-theme-color;
+
+            visibility: hidden;
+            opacity: 0;
+
+            .fsa-search-input {
+              padding: .3125rem;
+            }
+
+            .fsa-search-button {
+              color: $fsa-header-search-icon-theme-color;
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+              padding-right: .625rem;
+              padding-left: 1rem;
+            }
+
+          }
+
+        }
+      }
+
+      .fsa-nav-section-4 {
+        grid-area: area-nav-4;
+        display: flex;
+        align-items: center;
+        background-color: $fsa-header-nav-theme-color;
+        padding-right: 5rem;
+
+        .fsa-nav-menu-button {
+          &:hover {
+            > .fsa-nav-title {
+              padding-bottom: .5rem;
+              border-bottom: .1875rem solid $fsa-header-nav-secondary-theme-color;
+            }
+          }
+        }
+
+        .fsa-content-button-area {
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+        }
+
+        .fsa-nav-categories-container {
+          align-items: center;
+          padding-left: 5rem;
+          margin: 0;
+
+          > li {
+            float: left;
+          }
+
+          .fsa-nav-category-container {
+            position: relative;
+
+            &.fsa-show {
+              .fsa-nav-category-dropdown-menu {
+                visibility: visible;
+                opacity: 1;
+                display: block;
+              }
+            }
+
+
+            .fsa-nav-category-button {
+              background-color: transparent;
+              border: none;
+              font-family: $fsa-usds-font-default;
+              font-size: 0.875rem;
+              font-weight: bold;
+              padding: 1.25rem 0.75rem;
+              cursor: pointer;
+              color: $fsa-header-auth-nav-text-theme-color;
+
+              &.fsa-nav-more-button {
+                padding: 1.25rem 1rem;
+
+                &:hover {
+                  background-color: $fsa-color-light-blue-3;
+
+                  &.fsa-show {
+                    background-color: $fsa-header-nav-secondary-theme-color;
+                  }
+                }
+              }
+
+              .fsa-nav-title:after {
+                @include fa-common;
+                font-family: $fa-font-family;
+                content:$fsa-icon-expand-down;
+                font-weight: 900;
+                padding-left: .25rem;
+              }
+
+              &:hover {
+                > .fsa-nav-title {
+                  padding-bottom: .5rem;
+                  border-bottom: .1875rem solid $fsa-header-nav-secondary-theme-color;
+                }
+              }
+
+              &.fsa-show {
+                background-color: $fsa-header-nav-secondary-theme-color;
+                color:$fsa-header-nav-text-secondary-theme-color;
+              }
+            }
+
+            .fsa-nav-category-dropdown-menu {
+              min-width: 14.5rem;
+              background-color: $fsa-header-nav-secondary-theme-color;
+              position: absolute;
+              left: 0;
+              visibility: hidden;
+              opacity: 0;
+              display: none;
+
+              .fsa-nav-dropdown-list {
+                padding: 0;
+                columns: 1;
+
+                .fsa-nav-category-list-item-category {
+                  position: relative;
+
+                  .fsa-nav-category-link {
+                    text-decoration: none;
+                    color: $fsa-header-nav-text-secondary-theme-color;
+                    font-weight: 600;
+                    font-family: $fsa-usds-font-default;
+                    font-size: .875rem;
+                    width: 100%;
+
+                    &:after {
+                      @include fa-common;
+                      font-family: $fa-font-family;
+                      content: $fsa-icon-expand-right;
+                      font-weight: 900;
+                      text-align: right;
+                      float: right;
+                      display: inline-block;
+                      font-style: normal;
+                      font-variant: normal;
+                      text-rendering: auto;
+                      -webkit-font-smoothing: antialiased;
+                    }
+                  }
+
+                  .fsa-nav-category-link-sublist {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    background-color: $fsa-color-white;
+                    display: none;
+                    visibility: hidden;
+                    opacity: 0;
+                    left: 100%;
+                    top: 0;
+                    position: absolute;
+
+                    .fsa-nav-category-submenu-link {
+                      display: block;
+                      padding: .5rem;
+                      color: $fsa-header-nav-text-theme-color;
+                      text-decoration: none;
+                      font-family: $fsa-usds-font-default;
+                      font-size: .875rem;
+
+                      &.fsa-start {
+                        padding-top: 1rem;
+                      }
+
+                      &.fsa-end {
+                        padding-bottom: 1rem;
+                      }
+                    }
+                  }
+
+                  &:hover {
+                    .fsa-nav-category-link-sublist {
+                      display: block;
+                      visibility: visible;
+                      opacity: 1;
+                    }
+                  }
+
+
+                }
+
+                .fsa-nav-category-list-item {
+                  color: $fsa-header-auth-nav-text-theme-color;
+                  display: block;
+                  padding: 1rem;
+
+                  &.fsa-start {
+                    padding-top: 1rem;
+                  }
+
+                  &.fsa-end {
+                    padding-bottom: 1rem;
+                  }
+
+                  > .fsa-nav-category-link {
+                    color: $fsa-header-nav-text-secondary-theme-color;
+                    font-weight: 600;
+                    font-family: $fsa-usds-font-default;
+                    font-size: .875rem;
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .fsa-nav-section-5 {
+        grid-area: area-nav-5;
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .fsa-nav-gutter {
+        grid-area: area-nav-gutter;
+      }
+
+      .fsa-nav-category-dropdown-menu {
+        padding: 1rem;
+      }
+
+      .fsa-columns-2 {
+        columns: 2;
+
+        .fsa-nav-dropdown-list {
+          min-width: 12.5rem;
+        }
+      }
+
+      .fsa-nav-categories-container {
+        white-space: nowrap;
+      }
+
+      .fsa-logo {
+        width: 11.25rem;
+        height: 2.375rem;
+      }
+
+      .fsa-header-link {
+        text-decoration: none;
+        display: inline !important;
+        font-family: $fsa-usds-font-default;
+        font-size: .875rem;
+        color: $fsa-header-links-theme-color !important;
+      }
+
+      .fsa-content-area {
+        margin-right: 1rem;
+        margin-left: auto;
+        border: .0625rem solid rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 1rem 8rem;
+        color: $fsa-header-auth-nav-text-theme-color;
+        font-family: "Public Sans Bold", serif;
+        font-size: .625rem;
+        font-weight: bold;
+        border-radius: 6px
+
+      }
+
+      .fsa-login-button {
+        margin-left: auto;
+        margin-top: 0.3125rem;
+        margin-bottom: 0.3125rem;
+        border: .125rem solid $fsa-header-nav-secondary-theme-color;
+        background-color: $fsa-header-nav-secondary-theme-color;
+        padding: .875rem 1rem;
+        color: $fsa-color-white;
+        font-family: $fsa-usds-font-default;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .fsa-triangle-bottom {
+        position: absolute;
+        border-left: 0.625rem solid transparent;
+        border-right: 0.625rem solid transparent;
+        border-bottom: 0.625rem solid $fsa-color-white;
+        margin-left: auto;
+        margin-right: auto;
+        width: 0;
+        height: 0;
+        left: 0;
+        right: 0;
+        bottom: 0
+      }
+
+      .fsa-button-menu-container {
+        position: relative;
+      }
+
+      .fsa-user-menu-container {
+        position: absolute;
+        right: 0;
+        width: 100%;
+        background-color: $fsa-header-nav-secondary-theme-color;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+
+        &.fsa-show {
+          display: block;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      .fsa-user-menu-list {
+        z-index: 1;
+        padding-left: 1rem;
+      }
+
+      .fsa-servicer-logo {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        padding: 1.5rem 2rem;
+        font-family: $fsa-usds-font-default;
+        font-size: .625rem;
+        font-weight: bold;
+        color:  $fsa-color-blue;
+        border: 0.0625rem solid  $fsa-color-blue;
+        border-radius: 6px;
+        background-color: $fsa-color-light-blue-2;
+        display: inline-block;
+
+      }
+
+      .fsa-logo-button {
+        align-self: center;
+        border-left: .0625rem solid $fsa-header-co-brand-logo-theme-color;
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+        padding-left: 1rem;
+        background-color: transparent;
+
+        &:hover {
+          padding: .5rem 1rem;
+          border-radius: 6px;
+          background-color: $fsa-header-co-brand-logo-secondary-theme-color;
+          border: .0625rem solid $fsa-header-co-brand-logo-secondary-theme-color;
+          cursor: pointer;
+        }
+      }
+
+    }
+
+    .fsa-mobile-nav {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @media screen and (max-width: $fsa-header-mobile-view-breakpoint) {
+
+    .fsa-mobile-nav-header {
+      padding: 1.5rem 1rem;
+      background-color: $fsa-color-white;
+      display: flex;
+      align-items: flex-start;
+
+      &.fsa-hide {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .fsa-servicer-logo {
+        display: inline-block;
+        align-self: center;
+        padding: 1rem 1rem;
+        margin-right: .5rem;
+        font-family: $fsa-usds-font-default;
+        font-size: .5rem;
+        font-weight: bold;
+        color:  $fsa-color-blue;
+        border: .0625rem solid  $fsa-color-blue;
+        border-radius: 6px;
+        background-color: $fsa-color-light-blue-2;
+
+      }
+
+      .fsa-logo {
+        width: 6.25rem;
+        height: 1.5rem;
+      }
+
+      .fsa-logo-button {
+        align-self: center;
+        border-left: .0625rem solid $fsa-header-co-brand-logo-theme-color;
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+        padding-left: .5rem;
+
+        background-color: transparent;
+
+        &:hover {
+          padding: .5rem;
+          border-radius: 6px;
+          border: none;
+          background-color: $fsa-header-co-brand-logo-secondary-theme-color;
+          cursor: pointer;
+        }
+      }
+
+    }
+
+    .fsa-mobile-nav {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+
+
+      .fsa-nav-category-list-item {
+        &:hover {
+          .fsa-active-item {
+            visibility: visible;
+            opacity: 1;
+            display: block;
+
+          }
+          &:focus {
+            .fsa-active-item {
+              visibility: visible;
+              opacity: 1;
+              display: block;
+            }
+          }
+        }
+      }
+      .fsa-mobile-nav-menu {
+        display: inline;
+        justify-content: start;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        visibility: hidden;
+        opacity: 0;
+        padding-top: 1.5rem;
+        transform: translateX(17.5rem);
+        transition: transform 200ms linear;
+        background: $fsa-color-white;
+        z-index: 1;
+        overflow-y: scroll;
+
+        &.fsa-show {
+          display:flex;
+          position: fixed;
+          visibility: visible;
+          opacity: 1;
+          transform: none;
+
+        }
+      }
+
+      .fsa-mobile-nav-section-1 {
+        order: 1;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        .fsa-search-dropdown-input-container {
+          display: flex;
+        }
+
+        .fsa-search-container {
+          position: relative;
+          align-self: center;
+          margin-right: 1rem;
+        }
+
+        .fsa-search-container:after {
+          @include fa-common;
+          font-family: $fa-font-family;
+          content: $fsa-icon-search;
+          position: absolute;
+          right: 0.375rem;
+          font-weight: 900;
+          padding: 0.3125rem;
+          color: $fsa-header-nav-secondary-theme-color;
+          top: .15rem;
+        }
+
+        .fsa-search-input {
+          opacity: 0.5;
+          color: $fsa-header-nav-text-theme-color;
+          font-family: $fsa-usds-font-default;
+          font-size: 0.9375rem;
+          padding: .3125rem;
+          max-width: 10rem;
+        }
+
+        .fsa-search-close {
+          margin-left: auto;
+          order: 2;
+          width: 4rem;
+          height: 3rem;
+          background-color: $fsa-header-nav-theme-color;
+          color: $fsa-header-auth-nav-text-theme-color;
+          font-size: .875rem;
+          font-weight: bold;
+          border-radius: 6px;
+          cursor: pointer;
+          border: none;
+        }
+
+
+      }
+
+      .fsa-mobile-nav-section-2 {
+        order: 2;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        .fsa-user-menu-list {
+          margin: 0;
+          padding: 1rem 1.25rem;
+        }
+
+        .fsa-mobile-login-button {
+          width: 100%;
+          font-weight: bold;
+          border: 0.125rem solid $fsa-color-blue-2;
+          background-color: $fsa-color-white;
+          padding: 1rem 1rem;
+          color:  $fsa-color-blue-2;
+          font-family: $fsa-usds-font-default;
+          font-size: 1rem;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+
+      }
+
+      .fsa-mobile-nav-section-3 {
+        order: 3;
+        padding: 1rem;
+        background-color: $fsa-header-nav-theme-color;
+
+        .fsa-active-item {
+          border-color: $fsa-header-auth-nav-text-theme-color;
+          background-color: $fsa-header-auth-nav-text-theme-color;
+        }
+
+        .fsa-triangle-bottom {
+          visibility: hidden;
+          opacity: 0;
+          display: none;
+        }
+
+        .fsa-nav-category-list-item {
+          position: relative;
+          .fsa-nav-category-link {
+            color: $fsa-header-auth-nav-text-theme-color;
+            text-decoration: none;
+          }
+        }
+
+        .fsa-button-menu-container {
+          display: block;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .fsa-nav-category-container {
+          display: grid;
+        }
+
+        .fsa-nav-menu-button {
+          border-top: .0625rem solid $fsa-header-mobile-border-theme-color;
+          text-align: left;
+          padding: .5rem 1rem;
+          font-size: 1rem;
+          &:hover {
+            > .fsa-nav-title {
+              padding-bottom: .5rem;
+              border-bottom: .1875rem solid $fsa-header-nav-secondary-theme-color;
+            }
+            .fsa-active-item {
+              display: block;
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+
+        .fsa-nav-menu-button-last {
+          border-bottom: .0625rem solid $fsa-header-mobile-border-theme-color;
+        }
+
+        .fsa-nav-category-button {
+          position: relative;
+          display: flex;
+          border-top: .0625rem solid $fsa-header-mobile-border-theme-color;
+          border-bottom: none;
+          border-left: none;
+          border-right: none;
+          background-color: $fsa-header-nav-theme-color;
+          color: $fsa-header-auth-nav-text-theme-color;
+          font-size: 1rem;
+          font-weight: bold;
+          font-family: $fsa-usds-font-default;
+          padding: 0;
+          cursor: pointer;
+
+          &:hover {
+            .fsa-active-category {
+              visibility: visible;
+              opacity: 1;
+              display: block;
+              border-color: $fsa-header-auth-nav-text-theme-color;
+              background-color: $fsa-header-auth-nav-text-theme-color;
+            }
+          }
+
+          &.fsa-show {
+
+            border-bottom: .0625rem solid $fsa-header-mobile-border-theme-color;
+            .fsa-nav-title:after {
+              @include fa-common;
+              font-family: $fa-font-family;
+              content: $fsa-icon-collapsible;
+              font-weight: 900;
+              text-align: right;
+              float: right;
+              color: $fsa-header-auth-nav-text-theme-color;
+            }
+          }
+
+        }
+      }
+
+      .fsa-mobile-nav-section-4 {
+        order: 4;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        .fsa-active-item {
+          border-color: $fsa-header-mobile-active-indicator-theme-color;
+          background-color: $fsa-header-mobile-active-indicator-theme-color;
+        }
+
+        .fsa-nav-category-list-item {
+          position: relative;
+        }
+
+        .fsa-nav-category-link {
+          text-decoration: none;
+          color: $fsa-header-nav-text-theme-color;
+        }
+
+        .fsa-nav-category-button {
+          position: relative;
+          display: flex;
+          border-top: .125rem solid $fsa-header-mobile-border-theme-color;
+          border-bottom: none;
+          border-left: none;
+          border-right: none;
+          background-color: $fsa-color-white;
+          color: $fsa-header-nav-text-theme-color;
+          font-size: 1rem;
+          font-weight: bold;
+          font-family: $fsa-usds-font-default;
+
+          &:hover {
+            .fsa-active-category {
+              visibility: visible;
+              opacity: 1;
+              display: block;
+            }
+          }
+
+
+          &.fsa-show {
+            border-bottom: .125rem solid $fsa-header-mobile-border-theme-color;
+            color: $fsa-header-nav-text-theme-color;
+
+            .fsa-nav-title:after {
+              @include fa-common;
+              font-family: $fa-font-family;
+              content: $fsa-icon-collapsible;
+              font-weight: 900;
+              text-align: right;
+              float: right;
+            }
+          }
+        }
+
+
+      }
+
+      .fsa-mobile-nav-section-5 {
+        order: 5;
+        align-self: stretch;
+        flex-grow: 1;
+        background-color: $fsa-header-mobile-links-theme-color;
+      }
+    }
+
+    .fsa-nav {
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+    }
+
+    .fsa-nav-category-dropdown-menu {
+      padding: 0;
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+
+      &.fsa-show {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+      }
+    }
+
+    .fsa-nav-search-button {
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+    }
+
+    .fsa-search-button {
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+    }
+
+    .fsa-mobile-menu-button {
+      margin-left: auto;
+      visibility: visible;
+      opacity: 1;
+      display: inline;
+      width: 4rem;
+      height: 3rem;
+      background-color: $fsa-header-nav-theme-color;
+      color: $fsa-header-auth-nav-text-theme-color;
+      font-family: $fsa-usds-font-default;
+      font-size: .875rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .fsa-nav-categories-container {
+      padding-left: 0;
+
+      .fsa-nav-category-container {
+        display: grid;
+
+        .fsa-nav-title:after {
+          @include fa-common;
+          font-family: $fa-font-family;
+          content: $fsa-icon-expandable;
+          font-weight: 900;
+          text-align: right;
+          float: right;
+        }
+
+        .fsa-nav-dropdown-list {
+          list-style: none;
+          padding-left: 0;
+
+          .fsa-nav-category-link {
+            padding-left: 2rem;
+          }
+        }
+
+        .fsa-nav-category-list-item {
+          border-bottom: .0625rem solid $fsa-header-mobile-border-theme-color;
+          padding: .5rem 1rem .5rem 0;
+          background-color: transparent;
+          font-size: 1rem;
+          font-weight: bold;
+          font-family: $fsa-usds-font-default;
+        }
+
+        .fsa-nav-category-button-last {
+          border-bottom: .0625rem solid $fsa-header-mobile-border-theme-color;
+        }
+
+
+        .fsa-nav-title {
+          padding: .5rem 1rem;
+          align-self: center;
+          flex-grow: 1;
+          text-align: left;
+        }
+      }
+    }
+
+    .fsa-active-category {
+      position: absolute;
+      left: 0;
+      align-self: center;
+      height: 70%;
+      padding: .0625rem;
+      border: 0.03125rem solid $fsa-header-mobile-active-indicator-theme-color;
+      border-radius: 6px;
+      background-color: $fsa-header-mobile-active-indicator-theme-color;
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+    }
+
+
+
+    .fsa-active-item {
+      position: absolute;
+      top: .25rem;
+      left: 0;
+      align-self: center;
+      height: 70%;
+      padding: .0625rem;
+      border: 0.03125rem solid $fsa-header-mobile-active-indicator-theme-color;
+      border-radius: 6px;
+      background-color: $fsa-header-mobile-active-indicator-theme-color;
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+    }
+
+    .fsa-header-links {
+      padding-left: 1rem;
+      padding-top: 1rem;
+      padding-bottom: 100%;
+    }
+
+    .fsa-header-link {
+      display: block;
+      font-family: $fsa-usds-font-default;
+      font-size: .875rem;
+      padding-bottom: 1rem;
+      color: $fsa-header-links-theme-color;
+      text-decoration: none;
+    }
+
+    .fsa-user-menu-button {
+      font-family: $fsa-usds-font-default;
+      font-size: 1rem;
+      text-align: left;
+      color: $fsa-color-white;
+      background-color: $fsa-header-nav-secondary-theme-color;
+      width: 100%;
+      border: .125rem solid $fsa-header-nav-secondary-theme-color;
+      border-radius: 6px;
+      padding: 1rem 1rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.fsa-show {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0.03125rem solid $fsa-color-white;
+        &:after {
+          @include fa-common;
+          font-family: $fa-font-family;
+          content:$fsa-icon-collapse-up;
+          font-weight: 900;
+          margin-left: .5rem;
+          text-align: right;
+          float: right;
+        }
+      }
+
+      &:before {
+        @include fa-common;
+        font-family: $fa-font-family;
+        content: $fsa-icon-user;
+        font-weight: 300;
+        margin-right: .5rem;
+      }
+
+      &:after {
+        @include fa-common;
+        font-family: $fa-font-family;
+        content:$fsa-icon-expand-down;
+        font-weight: 900;
+        margin-left: .5rem;
+        text-align: right;
+        float: right;
+      }
+    }
+
+    .fsa-user-menu-container {
+      position: static;
+      right: 0;
+      width: 100%;
+      background-color: $fsa-header-nav-secondary-theme-color;
+      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: 6px;
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+
+      &.fsa-show {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .fsa-button-menu-container {
+    .fsa-settings-button {
+      font-family: $fsa-usds-font-default;
+      font-size: .875rem;
+      color: $fsa-color-white;
+      background-color: transparent;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:before {
+        @include fa-common;
+        font-family: $fa-font-family;
+        content: $fsa-icon-settings;
+        font-weight: 300;
+        margin-right: .5rem;
+      }
+    }
+
+    .fsa-logout-button {
+      font-family: $fsa-usds-font-default;
+      font-size: .875rem;
+      border: none;
+      color: $fsa-color-white;
+      background-color: transparent;
+      margin-top: 1rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:before {
+        @include fa-common;
+        font-family: $fa-font-family;
+        content: $fsa-icon-logout;
+        font-weight: 300;
+        margin-right: .5rem;
+      }
+    }
+
+    .fsa-user-menu-button {
+      border: .0625rem solid $fsa-header-nav-secondary-theme-color;
+      border-radius: 6px;
+      color: $fsa-color-white;
+      background-color: $fsa-header-nav-secondary-theme-color;
+      font-family: $fsa-usds-font-default;
+      font-size: 1rem;
+      padding: .875rem 1rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.fsa-show {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0.03125rem solid $fsa-color-white;
+        &:after {
+          @include fa-common;
+          font-family: $fa-font-family;
+          content:$fsa-icon-collapse-up;
+          font-weight: 900;
+          margin-left: .5rem;
+        }
+      }
+
+      &:before {
+        @include fa-common;
+        font-family: $fa-font-family;
+        content: $fsa-icon-user;
+        font-weight: 300;
+        margin-right: .5rem;
+      }
+
+      &:after {
+        @include fa-common;
+        font-family: $fa-font-family;
+        content:$fsa-icon-expand-down;
+        font-weight: 900;
+        margin-left: .5rem;
+      }
+    }
+  }
+
+  .fsa-nav-menu-button {
+    font-family: $fsa-usds-font-default;
+    font-size: .875rem;
+    font-weight: bold;
+    color: $fsa-header-auth-nav-text-theme-color;
+    background-color: transparent;
+    position: relative;
+    padding: 1.25rem .75rem;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .fsa-border-bottom-none {
+    border-bottom: none !important;
+  }
+
+  .fsa-border-top-none {
+    border-top: none !important;
+  }
+}
+
+.fsa-secondary-header {
+  .fsa-button-menu-container {
+    margin-left: auto;
+  }
+
+  .fsa-nav {
+    grid-template-columns: [start] auto [line2] auto [line3] auto [line4] 50px [line5] 80px [end] !important;
+    grid-template-rows: auto !important;
+    grid-template-areas:
+      "area-nav-1 area-nav-1 area-nav-5 area-nav-3 area-nav-gutter"
+      "area-nav-1 area-nav-1 area-nav-2 area-nav-2 area-nav-2"
+      "area-nav-4 area-nav-4 area-nav-4 area-nav-4 area-nav-4" !important;
+
+    .fsa-nav-section-2 {
+      margin-right: 5rem !important;
+    }
+
+    .fsa-nav-section-4 {
+      .fsa-nav-category-list-item-category:focus-within {
+        .fsa-nav-category-link-sublist {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+      }
+
+      .fsa-nav-more-button-container {
+        .fsa-nav-category-dropdown-menu {
+          padding: 0;
+        }
+
+        .fsa-nav-more-label {
+          > i {
+            padding-left: .375rem;
+          }
+
+        }
+      }
+    }
+
+    .fsa-nav-section-5 {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+
+      .fsa-header-links-container {
+        float: right;
+        margin-top: 1rem;
+
+        .fsa-header-link {
+          margin-right: 1.5rem;
+          color: $fsa-header-links-theme-color;
+          font-family: $fsa-usds-font-default;
+          font-size: .875rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

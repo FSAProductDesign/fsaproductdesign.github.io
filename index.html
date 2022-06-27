@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Primary Header Authenticated Template</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link href="assets/fontawesome/css/all.css" rel="stylesheet">
+  <link href="assets/css/usds-modal.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="fsa-header">
+
+  <nav aria-label="Main Navigation" id="fsa_Header_Nav" class="fsa-nav">
+    
+    <div class="fsa-nav-section-1" id="fsa_Header_BrandContainer">
+      <div class="header-fsa-servicer-logo"><img src="https://studentaid.gov/universal-navigation/assets/fsa-logo.svg" />
+      </div>
+    </div>
+
+    
+    <div class="fsa-nav-section-3" id="fsa_Header_SearchContainer">
+        <div id="fsa_Nav_Search" class="fsa-search-dropdown-container">
+          <button
+            id="fsa_Button_ToggleSearch Menu"
+            aria-label="Toggle Search Menu"
+            type="button"
+            class="fsa-nav-search-button"
+            aria-expanded="false"
+            aria-controls="fsa_Dropdown_Search"
+            onclick="toggleSearch(this)">
+            <span class="fsa-search-expand"><i class="fas fa-search fa-lg"></i></span>
+            <span class="fsa-search-close"><i class="far fa-times fa-lg"></i></span>
+          </button>
+          <div id="fsa_Dropdown_Search" class="fsa-search-dropdown-input-container">
+            <div class="fsa-search-container">
+              <input id="fsa_Input_Search" aria-label="Search" class="fsa-search-input" type="text" placeholder="Search">
+            </div>
+            <button id="fsa_Button_Search" aria-label="Search" type="button" class="fsa-search-button">
+              <i class="fas fa-search fa-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="fsa-nav-gutter"></div>
+      
+
+    <div class="fsa-nav-section-2" id="fsa_Header_CategoriesContainer">
+      <ul class="fsa-nav-categories-container">
+        <div class="fsa-nav-section-5">
+            <div class="fsa-header-links-container">
+              <a id="fsa_Link_Links1" class="fsa-header-link" href="#">Help Center</a>
+              <a id="fsa_Link_Links2" class="fsa-header-link" href="#">Submit a Complaint</a>
+              <a id="fsa_Link_Links2" class="fsa-header-link" href="#">Language Selection</a>
+            </div>
+        </div>
+
+        <li class="fsa-nav-category-container">
+          <button
+            id="fsa_Button_Nav2"
+            type="button"
+            class="fsa-nav-category-button"
+            aria-expanded="false"
+            aria-controls="fsa_Dropdown_Nav2"
+            onclick="toggleNavMenuActive(this)">
+            <span class="fsa-nav-title">FAFSA</span>
+          </button>
+          <div class="fsa-nav-category-dropdown-menu" id="fsa_Dropdown_Nav2">
+            <ul class="fsa-nav-dropdown-list">
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav2_1" class="fsa-nav-category-link" href="#" style ="font-size:1.1rem;"><strong>Complete the FAFSA Form</strong></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav2_2" class="fsa-nav-category-link" href="#">How to fill out the FAFSA form</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav2_3" class="fsa-nav-category-link" href="#">FAFSA Deadlines</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav2_3" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav2_3" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav2_3" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav2_3" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav2_4" class="fsa-nav-category-link" href="#">How to Renew Your FAFSA Form</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav2_5" class="fsa-nav-category-link" href="#">Reviewing and Correcting Your FAFSA Form</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav2_6" class="fsa-nav-category-link" href="#">View Your Student Aid Report (SAR)</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="fsa-nav-category-container">
+          <button
+            id="fsa_Button_Nav3"
+            type="button"
+            class="fsa-nav-category-button"
+            aria-expanded="false"
+            aria-controls="fsa_Dropdown_Nav3"
+            onclick="toggleNavMenuActive(this)">
+            <span class="fsa-nav-title">Loans and Grants</span>
+          </button>
+          <div class="fsa-nav-category-dropdown-menu" id="fsa_Dropdown_Nav3">
+            <ul class="fsa-nav-dropdown-list">
+              <li><span id="head" class="fsa-nav-category-link" href="#">Get a Loan</span></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_1" class="fsa-nav-category-link" href="#">Undergraduate and Graduate Loans</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_2" class="fsa-nav-category-link" href="#">PLUS Loans</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_3" class="fsa-nav-category-link" href="#">Master Promissory Note (MPN)</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_4" class="fsa-nav-category-link" href="#">Loan Entrance Counseling</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_5" class="fsa-nav-category-link" href="#">Annual Student Loan Acknowledgement</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_5" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_5" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_5" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_5" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_5" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_5" class="fsa-nav-category-link" href="#"></a></li>
+              
+              <li><span id="head" class="fsa-nav-category-link" href="#">Get a Grant</span></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_6" class="fsa-nav-category-link" href="#">Pell Grants</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_7" class="fsa-nav-category-link" href="#">TEACH Grants</a></li>
+              <li><span id="head" class="fsa-nav-category-link" href="#">Tools and Calculators</span></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_8" class="fsa-nav-category-link" href="#">Federal Student Aid Estimator</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_8" class="fsa-nav-category-link" href="#">Loan Simulator</a></li>
+              <li><span id="head" class="fsa-nav-category-link" href="#">Learn About Loans and Grants</span></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_8" class="fsa-nav-category-link" href="#">How Financial Aid Works</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav3_8" class="fsa-nav-category-link" href="#">Loans, Grants, and Work Study</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="fsa-nav-category-container">
+          <button
+            id="fsa_Button_Nav4"
+            type="button"
+            class="fsa-nav-category-button fsa-nav-category-button-last"
+            aria-expanded="false"
+            aria-controls="fsa_Dropdown_Nav4"
+            onclick="toggleNavMenuActive(this)">
+            <span class="fsa-nav-title">Repayment</span>
+          </button>
+          <div class="fsa-nav-category-dropdown-menu" id="fsa_Dropdown_Nav4">
+            <ul class="fsa-nav-dropdown-list">
+              <li><span id="head" class="fsa-nav-category-link" href="#">Prepare and Apply</span></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_1" class="fsa-nav-category-link" href="#">Loan Exit Counseling</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_2" class="fsa-nav-category-link" href="#">Income-Driven Repayment (IDR) Plan</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_3" class="fsa-nav-category-link" href="#">Consolidate My Loans</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_3" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_3" class="fsa-nav-category-link" href="#"></a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_3" class="fsa-nav-category-link" href="#"></a></li>
+              <li><span id="head" class="fsa-nav-category-link" href="#">Tools and Calculators</span></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_4" class="fsa-nav-category-link" href="#">Loan Simulator</a></li>
+              <li><span id="head" class="fsa-nav-category-link" href="#">Learn About Repaying Loans</span></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_5" class="fsa-nav-category-link" href="#">Repayment Plans</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_7" class="fsa-nav-category-link" href="#">Deferment or Forbearance</a></li>
+              <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_8" class="fsa-nav-category-link" href="#">Delinquency and Default</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="fsa-nav-category-container">
+            <button
+              id="fsa_Button_Nav4"
+              type="button"
+              class="fsa-nav-category-button fsa-nav-category-button-last"
+              aria-expanded="false"
+              aria-controls="fsa_Dropdown_Nav4"
+              onclick="toggleNavMenuActive(this)">
+              <span class="fsa-nav-title">Loan Forgiveness</span>
+            </button>
+            <div class="fsa-nav-category-dropdown-menu" id="fsa_Dropdown_Nav4">
+              <ul class="fsa-nav-dropdown-list">
+                <li><span id="head" class="fsa-nav-category-link" href="#">Apply for Forgiveness</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_1" class="fsa-nav-category-link" href="#">Public Service Loan Forgiveness (PSLF)</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_2" class="fsa-nav-category-link" href="#">Teacher Loan Forgiveness</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_3" class="fsa-nav-category-link" href="#">Borrower Defense to Repayment</a></li>
+                <li><span id="head" class="fsa-nav-category-link" href="#">Learn about Loan Forgiveness</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_4" class="fsa-nav-category-link" href="#">Closed School Loan Discharge</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_5" class="fsa-nav-category-link" href="#">Loan Discharge Due to Death</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Link_Nav4_6" class="fsa-nav-category-link" href="#">Other Forgiveness and Loan Discharge Programs</a></li>
+              </ul>
+            </div>
+          </li>
+      </ul>
+    </div>
+
+    <div class="fsa-nav-section-4" id="fsa_Header_MainMenuContainer">
+      <ul id="fsa_Nav_AuthenticatedMenu" class="fsa-nav-categories-container">
+        <li class="fsa-nav-category-container">
+          <button id="fsa_Button_AuthNav1"  class="fsa-nav-menu-button">
+            <span class="fsa-nav-title">Dashboard</span>
+            <span class="fsa-triangle-bottom"></span>
+          </button>
+
+        </li>
+        <li class="fsa-nav-category-container">
+          <button id="fsa_Button_AuthNav3" class="fsa-nav-menu-button fsa-nav-menu-button-last"><span class="fsa-nav-title">My Cases and Applications</span></button>
+        </li>
+        <li class="fsa-nav-category-container">
+            <button id="fsa_Button_AuthNav3" class="fsa-nav-menu-button fsa-nav-menu-button-last"><span class="fsa-nav-title">My Aid</span></button>
+        </li>
+        <li class="fsa-nav-category-container">
+            <button id="fsa_Button_AuthNav3" class="fsa-nav-menu-button fsa-nav-menu-button-last"><span class="fsa-nav-title">My Documents</span></button>
+        </li>
+        <li class="fsa-nav-category-container">
+            <button id="fsa_Button_AuthNav3" class="fsa-nav-menu-button fsa-nav-menu-button-last"><span class="fsa-nav-title">My Enrollment</span></button>
+          </li>
+      </ul>
+      <div class="fsa-content-button-area">
+        <div id="fsa_Nav_UserMenu" class="fsa-button-menu-container">
+          <button aria-expanded="false" aria-controls="fsa_Dropdown_UserMenu" id="fsa_Button_UserMenu" class="fsa-user-menu-button" onclick="toggleUserMenuActive(this)">&nbsp;&nbsp;Bill&nbsp;&nbsp;</button>
+          <div id="fsa_Dropdown_UserMenu" class="fsa-user-menu-container">
+            <ul class="fsa-user-menu-list">
+              <li> <button class="fsa-settings-button">Settings</button></li>
+              <li> <button class="fsa-logout-button">Log Out</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <nav aria-label="Main Navigation" id="fsa_Header_MobileNav" class="fsa-mobile-nav">
+    <div id="fsa_Header_MobileMainHeader" class="fsa-mobile-nav-header">
+      <span class="header-fsa-servicer-logo"><img src="https://studentaid.gov/universal-navigation/assets/fsa-logo.svg" /></span>
+      <button
+        id="fsa_Button_MobileMenu"
+        aria-controls="fsa_Header_MobileNavMenu"
+        type="button"
+        class="fsa-mobile-menu-button"
+        onclick="openMobileMenu()">
+        Menu
+      </button>
+    </div>
+    <img class="mobile-screen" src="mobile-screen.png" />
+    <div id="fsa_Header_MobileNavMenu" class="fsa-mobile-nav-menu">
+      <div class="fsa-mobile-nav-section-1">
+        <div class="fsa-search-dropdown-container">
+          <div class="fsa-search-dropdown-input-container">
+            <div class="fsa-search-container">
+              <input id="fsa_Input_MobileSearch" aria-label="Search" class="fsa-search-input" type="text" placeholder="Search">
+            </div>
+            <button
+              id="fsa_Button_CloseMobileNavMenu"
+              aria-label="Close Menu"
+              class="fsa-search-close"
+              type="button"
+              onclick="closeMobileMenu(this)">
+              <span><i class="far fa-times fa-lg"></i></span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="fsa-mobile-nav-section-2">
+        <div id="fsa_Nav_MobileUserMenu" class="fsa-button-menu-container">
+          <button aria-expanded="false" id="fsa_Button_MobileUserMenu" class="fsa-user-menu-button" onclick="toggleUserMobileMenu(this)">
+            Bill
+          </button>
+          <div id="fsa_Nav_MobileLoginMenu" class="fsa-user-menu-container">
+            <ul class="fsa-user-menu-list">
+              <li>
+                <button class="fsa-settings-button">Settings</button>
+              </li>
+              <li>
+                <button class="fsa-logout-button">Log Out</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="fsa_Nav_MobileAuthenticatedMenu" class="fsa-mobile-nav-section-3">
+        <ul class="fsa-nav-categories-container">
+          <li class="fsa-nav-category-container">
+            <button id="fsa_Button_MobileAuthNav1" class="fsa-nav-menu-button ">
+              <span class="fsa-active-item"></span>
+              <span>Dashboard</span>
+            </button>
+
+          </li>
+          <li class="fsa-nav-category-container">
+            <button id="fsa_Button_MobileAuthNav3" class="fsa-nav-menu-button fsa-nav-menu-button-last">
+              <span class="fsa-active-item"></span>
+              <span>My Cases and Applications</span>
+            </button>
+          </li>
+          <li class="fsa-nav-category-container">
+            <button id="fsa_Button_MobileAuthNav3" class="fsa-nav-menu-button fsa-nav-menu-button-last">
+              <span class="fsa-active-item"></span>
+              <span>My Aid</span>
+            </button>
+          </li>
+          <li class="fsa-nav-category-container">
+            <button id="fsa_Button_MobileAuthNav3" class="fsa-nav-menu-button fsa-nav-menu-button-last">
+              <span class="fsa-active-item"></span>
+              <span>My Documents</span>
+            </button>
+          </li>
+          <li class="fsa-nav-category-container">
+            <button id="fsa_Button_MobileAuthNav3" class="fsa-nav-menu-button fsa-nav-menu-button-last">
+              <span class="fsa-active-item"></span>
+              <span>My Enrollment</span>
+            </button>
+          </li>
+          <li class="fsa-nav-category-container">
+            <button id="fsa_Button_MobileAuthNav3" class="fsa-nav-menu-button fsa-nav-menu-button-last">
+              <span class="fsa-active-item"></span>
+              <span>Settings</span>
+            </button>
+          </li>
+          <li class="fsa-nav-category-container">
+            <button id="fsa_Button_MobileAuthNav3" class="fsa-nav-menu-button fsa-nav-menu-button-last">
+              <span class="fsa-active-item"></span>
+              <span>Log Out</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="fsa-mobile-nav-section-4">
+        <ul class="fsa-nav-categories-container">
+          <li class="fsa-nav-category-container">
+            <button
+              id="fsa_Button_MobileNav1"
+              type="button"
+              class="fsa-nav-category-button"
+              aria-expanded="false"
+              aria-controls="fsa_Dropdown_MobileNav1"
+              onclick="toggleMobileAccordion(this)">
+              <span class="fsa-active-category"></span>
+              <span class="fsa-nav-title">FAFSA</span>
+            </button>
+            <div class="fsa-nav-category-dropdown-menu" id="fsa_Dropdown_MobileNav1">
+              <ul class="fsa-nav-dropdown-list">
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav1_1" class="fsa-nav-category-link" href="#">Complete the FAFSA Form</a></li>
+                <li class="fsa-nav-category-list-item"><span id="mobile-head" class="fsa-nav-category-link" href="#">Learn About the FAFSA</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav1_2" class="fsa-nav-category-link" href="#">How to fill out the FAFSA form</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav1_3" class="fsa-nav-category-link" href="#">FAFSA Deadlines</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav1_4" class="fsa-nav-category-link" href="#">How to Renew Your FAFSA Form</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav1_5" class="fsa-nav-category-link" href="#">Reviewing and Correcting Your FAFSA Form</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav1_6" class="fsa-nav-category-link" href="#">View Your Student Aid Report (SAR)</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="fsa-nav-category-container">
+            <button
+              id="fsa_Button_MobileNav2"
+              type="button"
+              class="fsa-nav-category-button"
+              aria-expanded="false"
+              aria-controls="fsa_Dropdown_MobileNav2"
+              onclick="toggleMobileAccordion(this)">
+              <span class="fsa-active-category"></span>
+              <span class="fsa-nav-title">Loans and Grants</span>
+            </button>
+            <div class="fsa-nav-category-dropdown-menu" id="fsa_Dropdown_MobileNav2">
+              <ul class="fsa-nav-dropdown-list">
+                <li class="fsa-nav-category-list-item"><span id="mobile-head" class="fsa-nav-category-link" href="#">Get a Loan</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav2_1" class="fsa-nav-category-link" href="#">Undergraduate and Graduate Loans</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav2_2" class="fsa-nav-category-link" href="#">PLUS Loans</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav2_3" class="fsa-nav-category-link" href="#">Master Promissory Note (MPN)</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav2_4" class="fsa-nav-category-link" href="#">Loan Entrance Counseling</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav2_5" class="fsa-nav-category-link" href="#">Annual Student Loan Acknowledgement</a></li>
+                <li class="fsa-nav-category-list-item"><span id="mobile-head" class="fsa-nav-category-link" href="#">Get a Grant</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav2_6" class="fsa-nav-category-link" href="#">Pell Grants</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav2_7" class="fsa-nav-category-link" href="#">TEACH Grants</a></li>
+                <li class="fsa-nav-category-list-item"><span id="mobile-head" class="fsa-nav-category-link" href="#">Tools and Calculators</span></li>
+                <li class="fsa-nav-category-list-item fsa-border-bottom-none"><a id="fsa_Button_MobileNav2_8" class="fsa-nav-category-link" href="#">Federal Student Aid Estimator</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav2_4" class="fsa-nav-category-link" href="#">Loan Simulator</a></li>
+                <li class="fsa-nav-category-list-item"><span id="mobile-head" class="fsa-nav-category-link" href="#">Learn About Loans and Grants</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav2_5" class="fsa-nav-category-link" href="#">How Financial Aid Works</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav2_6" class="fsa-nav-category-link" href="#">Loans, Grants, and Work Study</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="fsa-nav-category-container">
+            <button
+              id="fsa_Button_MobileNav3"
+              type="button"
+              class="fsa-nav-category-button"
+              aria-expanded="false"
+              aria-controls="fsa_Dropdown_MobileNav3"
+              onclick="toggleMobileAccordion(this)">
+              <span class="fsa-active-category"></span>
+              <span class="fsa-nav-title">Repayment</span>
+            </button>
+            <div class="fsa-nav-category-dropdown-menu" id="fsa_Dropdown_MobileNav3">
+              <ul class="fsa-nav-dropdown-list">
+                <li class="fsa-nav-category-list-item"><span id="mobile-head" class="fsa-nav-category-link" href="#">Prepare and Apply</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav3_1" class="fsa-nav-category-link" href="#">Loan Exit Counseling</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav3_2" class="fsa-nav-category-link" href="#">Income-Driven Repayment (IDR) Plan</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav3_3" class="fsa-nav-category-link" href="#">Consolidate My Loans</a></li>
+                <li class="fsa-nav-category-list-item"><span id="mobile-head" class="fsa-nav-category-link" href="#">Tools and Calculators</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav3_4" class="fsa-nav-category-link" href="#">Loan Simulator</a></li>
+                <li class="fsa-nav-category-list-item"><span id="mobile-head" class="fsa-nav-category-link" href="#">Learn About Repaying Loans</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav3_5" class="fsa-nav-category-link" href="#">Repayment Plans</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav3_6" class="fsa-nav-category-link" href="#">Deferment or Forbearance</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav3_7" class="fsa-nav-category-link" href="#">Delinquency and Default</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="fsa-nav-category-container">
+            <button
+              id="fsa_Button_MobileNav4"
+              type="button"
+              class="fsa-nav-category-button fsa-nav-category-button-last"
+              aria-expanded="false"
+              aria-controls="fsa_Dropdown_MobileNav4"
+              onclick="toggleMobileAccordion(this)">
+              <span class="fsa-active-category"></span>
+              <span class="fsa-nav-title">Loan Forgiveness</span>
+            </button>
+            <div class="fsa-nav-category-dropdown-menu" id="fsa_Dropdown_MobileNav4">
+              <ul class="fsa-nav-dropdown-list">
+                <li class="fsa-nav-category-list-item"><span id="mobile-head" class="fsa-nav-category-link" href="#">Apply for Forgiveness</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav4_1" class="fsa-nav-category-link" href="#">Public Service Loan Forgiveness (PSLF)</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav4_2" class="fsa-nav-category-link" href="#">Teacher Loan Forgiveness</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav4_3" class="fsa-nav-category-link" href="#">Borrower Defense to Repayment</a></li>
+                <li class="fsa-nav-category-list-item"><span id="mobile-head" class="fsa-nav-category-link" href="#">Learn About Loan Forgiveness</span></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav4_4" class="fsa-nav-category-link" href="#">Closed School Loan Discharge</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav4_5" class="fsa-nav-category-link" href="#">Loan Discharge Due to Death</a></li>
+                <li class="fsa-nav-category-list-item"><span class="fsa-active-item"></span><a id="fsa_Button_MobileNav4_6" class="fsa-nav-category-link" href="#">Other Forgiveness and Loan Discharge Programs</a></li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="fsa-mobile-nav-section-5">
+        <div class="fsa-header-links">
+          <a class="fsa-header-link" href="#">Help Center</a>
+          <a class="fsa-header-link" href="#">Submit a Complaint</a>
+          <a class="fsa-header-link" href="#">Language Selection</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+</header>
+
+<div
+  id="usds-header-modal-servicer"
+  role="dialog"
+  aria-labelledby="usds-header-modal-servicer-header"
+  aria-describedby="usds-header-modal-servicer-main"
+  tabindex="-1"
+  class="usds-modal"
+><div class="usds-modal-overlay">
+
+  <div class="usds-modal-dialog">
+
+    <div class="usds-modal-content">
+
+      <div class="usds-modal-header">
+        <img id="usds-header-modal-servicer-header" src="assets/fsa-servicer-logo.svg" alt="Official Servicer of Federal Student Aid logo">
+      </div>
+
+      <div id="usds-header-modal-servicer-main" class="usds-modal-main">
+        <p>
+          Federal Student Aid (FSA) is your federal loan provider. FSA uses
+          servicers (private companies) like {{ServicerName}} to manage billing,
+          questions, and payments, and to help you enroll in the best repayment
+          plan for you.
+        </p>
+
+        <div class="usds-link">
+          <a id="Fsa_Link_HeaderLearnMore" href="#">Learn more about Federal Student Aid
+            <i aria-hidden="true" class="fas fa-external-link"></i>
+          </a>
+        </div>
+
+        <div class="usds-link">
+          <a id="Fsa_Link_HeaderLoanSimulator" href="#">See your repayment options with Loan Simulator
+            <i aria-hidden="true" class="fas fa-external-link"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="usds-modal-close">
+      <button
+        id="usds-header-modal-servicer-closer"
+        type="button"
+        class="usds-btn-modal-close"
+        data-usds-modal-closer
+      >
+        <i aria-hidden="true" class="far fa-times"></i>
+      </button>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<img class="web-screen" id="web" src="web-screen.png" />
+
+
+<div class="fsa-footer-container" >
+    <div class="fsa-servicer-box" role="banner">
+        <div class="row">
+            <div class="fsa-servicer-logo" id="fsa_Custom_Servicer_Logo">
+                <a href="#" class="fsa-link-text fsa-servicer-logo-text"><img src="https://studentaid.gov/universal-navigation/assets/fsa-logo.svg" /></a>
+            </div>
+            <div class="fsa-social-media-card-container">
+                <div class="fsa-social-media-card fsa-facebook-media-card">
+                    <a class="fsa-social-media-text" aria-label="facebook" role="link" href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FFederalStudentAid">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="fsa-social-media-card">
+                    <a class="fsa-social-media-text" aria-label="twitter" role="link"
+                        href="https://twitter.com/FAFSA?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                        <i class="fab fa-twitter"  aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="fsa-social-media-card">
+                    <a class="fsa-social-media-text" href="tel:123456789" aria-label="phone" role="link">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fsa-category-box" id="fsa_Category_Nav" role="main">
+        <div class="fsa-category-container" id="fsa_Category_Container">
+                <div class="fsa-provider-info" id="fsa_Category_Example_1_SubList_1">
+                    <a href="#" class="fsa-link-text" target="_blank"><b>About Us</b></a>
+                </div>
+                <div class="fsa-provider-info" id="fsa_Category_Example_1_SubList_2">
+                    <a href="#" class="fsa-link-text" target="_blank">Help Center</a>
+                </div>
+                <div class="fsa-provider-info" id="fsa_Category_Example_1_SubList_3">
+                    <a href="#" class="fsa-link-text" target="_blank">Contact Us</a>
+                </div>
+                <div class="fsa-provider-info" id="fsa_Category_Example_2_SubList_1">
+                    <a href="#" class="fsa-link-text">Site Feedback</a>
+                </div>
+                <div class="fsa-provider-info" id="fsa_Category_Example_2_SubList_2">
+                    <a href="#" class="fsa-link-text">Announcements and Events</a>
+                </div>
+                <div class="fsa-provider-info" id="fsa_Category_Example_2_SubList_3">
+                    <a href="#" class="fsa-link-text">Data Center</a>
+                </div>
+                <div class="fsa-provider-info" id="fsa_Category_Example_3_SubList_1">
+                    <a href="#" class="fsa-link-text">Resources</a>
+                </div>
+                <div class="fsa-provider-info" id="fsa_Category_Example_3_SubList_2">
+                    <a href="#" class="fsa-link-text">Repayment Forms Center</a>
+                </div>
+        </div>
+    </div>
+    </div>
+    <div class="fsa-copyright-container fsa-copyright-box" id="fsa_Copyright_Content_Box" role="contentinfo">
+        <div class="fsa-copyright-grid fsa-copyright-text">
+            <a href="#" class="fsa-social-media-text"><strong>Notices</strong></a>
+            <div><a href="#" class="fsa-social-media-text"><strong>usa.gov <i class="fa fa-external-link" aria-hidden="true"></i></strong></a></div>
+            <div><a href="#" class="fsa-social-media-text"><strong>ed.gov <i class="fa fa-external-link" aria-hidden="true"></i></strong></a></div>
+        </div>
+    </div>
+    </aside>
+</div>
+<script type="text/javascript" src="assets/js/header.min.js"></script>
+<script type="text/javascript" src="assets/js/usds-modal.min.js"></script>
+</body>
+</html>
